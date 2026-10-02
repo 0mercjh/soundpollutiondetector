@@ -5,31 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Decibel Meter: Noise Detector</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
-        h1, h2 { color: #1a73e8; }
+        :root {
+            --primary-color: #1a73e8;
+            --primary-dark: #1557b0;
+            --text-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --accent-green: #27ae60;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: var(--text-color);
+            font-size: 1.35rem;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            background-color: #e8f0fe;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-green {
+            background-color: #e6f4ea;
+            color: var(--accent-green);
+        }
+
+        .highlight-box {
+            background-color: #e8f0fe;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: #1967d2;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: March 2026</p>
-    <p><strong>Decibel Meter: Noise Detector</strong> ("we", "our", or "us") respects your privacy. This Privacy Policy explains how our mobile application collects, uses, and protects your information.</p>
 
-    <h2>1. Information We Collect and Permission Usage</h2>
-    <p><strong>Microphone Permission (RECORD_AUDIO):</strong> Our application requires access to your device's microphone solely to measure real-time ambient noise levels (decibels). Audio data is processed locally on your device in real-time and is <strong>never recorded, stored, transmitted, or uploaded</strong> to any external server.</p>
+<div class="container">
+    <header>
+        <h1>Privacy Policy</h1>
+        <div class="subtitle">App: <strong>Decibel Meter: Noise Detector</strong> | Effective Date: March 2026</div>
+    </header>
 
-    <h2>2. Data Collection and Storage</h2>
-    <p>We do not collect, store, or share any personal identifiable information (PII) or audio recordings. All decibel calculations happen entirely on your local device.</p>
+    <div class="highlight-box">
+        <p>🔒 <strong>Zero Audio Recording & Zero Data Collection Guarantee:</strong> Sound Pollution Detector processes sound levels locally in real-time on your device. We do NOT record, save, store, or transmit your voice or background audio to any server.</p>
+    </div>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The current version of the application does not utilize third-party analytics or advertising services that collect personal data.</p>
+    <h2>1. Introduction</h2>
+    <p>Welcome to <strong>Decibel Meter: Noise Detector</strong> ("we", "our", or "us"). We respect your privacy and are committed to protecting it. This Privacy Policy explains how our mobile application handles device permissions, processes audio data, and manages user privacy.</p>
 
-    <h2>4. Children's Privacy</h2>
-    <p>Our app does not knowingly collect any personal information from children under the age of 13.</p>
+    <h2>2. Permissions Requested & Purpose</h2>
+    <p>To provide accurate noise monitoring, our app requests the following Android system permissions:</p>
+    <ul>
+        <li>
+            <strong>Microphone Access (<span class="badge">RECORD_AUDIO</span>):</strong>
+            Used exclusively to sample ambient sound pressure levels and calculate real-time noise volume in decibels (dB SPL / dBA). Audio samples are processed in volatile device memory (RAM) and immediately discarded. No audio recordings or sound files are ever created or stored.
+        </li>
+        <li>
+            <strong>Foreground Service (<span class="badge">FOREGROUND_SERVICE</span> & <span class="badge">FOREGROUND_SERVICE_MICROPHONE</span>):</strong>
+            Allows continuous noise level monitoring while the app is running in the background or when your device screen is off. An active persistent notification is displayed whenever foreground monitoring is active so you retain full control over when the microphone is in use.
+        </li>
+        <li>
+            <strong>Notifications (<span class="badge">POST_NOTIFICATIONS</span>):</strong>
+            Required on Android 13 and above to display the active noise status notification bar and provide quick control actions (such as stopping continuous sound monitoring).
+        </li>
+        <li>
+            <strong>Internet Access (<span class="badge">INTERNET</span>):</strong>
+            Used strictly to perform automated version compatibility checks and retrieve mandatory app updates via secure HTTP connections.
+        </li>
+    </ul>
 
-    <h2>5. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+    <h2>3. Local Storage & Calibration Data</h2>
+    <p>Our app saves a small microphone calibration offset value (<span class="badge badge-green">SharedPreferences</span>) locally on your device. This allows the app to retain your customized decibel calibration settings across sessions. This data remains 100% private to your device and is never uploaded or shared.</p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at: <em>itsmudassir14@gmail.com</em></p>
+    <h2>4. Data Sharing & Third-Party Services</h2>
+    <p>We do not collect, sell, trade, or share any personal identifiable information (PII) or device data with third parties. The app interacts with the following service solely for essential app functionality:</p>
+    <ul>
+        <li><strong>App Version Updates:</strong> Fetches minimal JSON configuration metadata via Retrofit to inform users when a mandatory app update is available. No user or device identification data is included in these update requests.</li>
+    </ul>
+
+    <h2>5. Children's Privacy</h2>
+    <p>Our application does not knowingly collect or solicit any personal data from children under the age of 13. The app functions as a general utility tool suitable for users of all ages.</p>
+
+    <h2>6. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy periodically to reflect app updates or legal requirements. Any modifications will be updated directly on this page with a revised effective date.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions, concerns, or feedback regarding this Privacy Policy, please contact us at:</p>
+    <p>📧 Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+
+    <footer>
+        &copy; 2026 Decibel Meter: Noise Detector. All rights reserved.
+    </footer>
+</div>
+
 </body>
 </html>
