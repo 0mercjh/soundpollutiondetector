@@ -135,14 +135,14 @@
             <strong>Microphone Access (<span class="badge">RECORD_AUDIO</span>):</strong>
             Used exclusively to sample ambient sound pressure levels and calculate real-time noise volume in decibels (dB SPL / dBA). Audio samples are processed in volatile device memory (RAM) and immediately discarded. No audio recordings or sound files are ever created or stored.
         </li>
-        <li>
+        <!-- <li>
             <strong>Foreground Service (<span class="badge">FOREGROUND_SERVICE</span> & <span class="badge">FOREGROUND_SERVICE_MICROPHONE</span>):</strong>
             Allows continuous noise level monitoring while the app is running in the background or when your device screen is off. An active persistent notification is displayed whenever foreground monitoring is active so you retain full control over when the microphone is in use.
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <strong>Notifications (<span class="badge">POST_NOTIFICATIONS</span>):</strong>
             Required on Android 13 and above to display the active noise status notification bar and provide quick control actions (such as stopping continuous sound monitoring).
-        </li>
+        </li> -->
         <li>
             <strong>Internet Access (<span class="badge">INTERNET</span>):</strong>
             Used strictly to perform automated version compatibility checks and retrieve mandatory app updates via secure HTTP connections.
